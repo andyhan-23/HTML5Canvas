@@ -1,28 +1,36 @@
 window.onload = function () {
-  const canvas = document.getElementById("line-caps-canvas");
+  const canvas = document.getElementById("line-joins-canvas");
   const context = canvas.getContext("2d");
 
   context.beginPath();
-  context.lineCap = "butt";
+  context.lineWidth = 20;
+  context.lineJoin = "miter";
+  context.moveTo(30, 30);
+  context.lineTo(130, 30);
+  context.lineTo(130, 130);
+  context.lineTo(30, 130);
+  context.lineTo(30, 230);
+  context.stroke();
+
+  context.beginPath();
+  context.lineWidth = 20;
   context.strokeStyle = "red";
-  context.lineWidth = 10;
-  context.moveTo(100, 100);
-  context.lineTo(300, 100);
+  context.lineJoin = "bevel";
+  context.moveTo(60, 60);
+  context.lineTo(160, 60);
+  context.lineTo(160, 160);
+  context.lineTo(60, 160);
+  context.lineTo(60, 260);
   context.stroke();
 
   context.beginPath();
-  context.lineCap = "round";
+  context.lineWidth = 20;
   context.strokeStyle = "blue";
-  context.lineWidth = 10;
-  context.moveTo(100, 125);
-  context.lineTo(300, 125);
-  context.stroke();
-
-  context.beginPath();
-  context.lineCap = "square";
-  context.strokeStyle = "green";
-  context.lineWidth = 10;
-  context.moveTo(100, 150);
-  context.lineTo(300, 150);
+  context.lineJoin = "round";
+  context.moveTo(90, 90);
+  context.lineTo(190, 90);
+  context.lineTo(190, 190);
+  context.lineTo(90, 190);
+  context.lineTo(90, 290);
   context.stroke();
 };
