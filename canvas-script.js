@@ -1,8 +1,11 @@
-const canvas = document.getElementById("hello-world-canvas");
-const context = canvas.getContext("2d");
+window.onload = function () {
+  const canvas = document.getElementById("line-canvas");
+  const context = canvas.getContext("2d");
 
-context.fillStyle = "blue";
-context.fillRect(10, 40, 30, 70);
-
-context.fillStyle = "yellow";
-context.fillRect(50, 30, 60, 30);
+  context.beginPath();
+  context.strokeStyle = "red";
+  context.lineWidth = 10;
+  context.moveTo(30, 70);
+  context.lineTo(130, 70);
+  context.stroke();
+};
